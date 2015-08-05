@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div>
+
+<div class="row marketing">
+  <form ng-submit="createNewBolgPost()">
+    Title: <input type="text" ng-model="title">
+    Content: <textarea ng-model="content"></textarea>
+    <input type="submit">
+  </form>
+  <div ng-show="error">
+    {{ error }}
+  </div>
+  <div ng-hide="error">
+    Filter: <input ng-model="searchTerm"><br>
+    <ul>
+      <li ng-repeat="(key, thing) in awesomeThings |filter:searchTerm track by $index">{{ key }}:{{ thing.title }}</li>
+    </ul>
+  </div>
+ 
+</div>
+
